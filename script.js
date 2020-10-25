@@ -59,6 +59,6 @@ app.post('/api/create', async (req, res) => {
 	res.json({ status: 'ok' })
 })
 
-app.listen(13371, () => {
+app.listen(13371, '127.0.0.1', () => {
 	console.log('Server up')
 })
