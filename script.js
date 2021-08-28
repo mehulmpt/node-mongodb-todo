@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const Todo = require("./models/todo");
 
 mongoose.connect(
-	`mongodb+srv://andrewcbuensalida:!1Heavenonearth@graphql-net-ninja-books.iirvr.mongodb.net/todo-mongoose-codedamn-db?retryWrites=true&w=majority`
+	`mongodb+srv://andrewcbuensalida:${process.env.DBPASS}@graphql-net-ninja-books.iirvr.mongodb.net/todo-mongoose-codedamn-db?retryWrites=true&w=majority`
 );
 
 app.use("/", express.static(path.resolve(__dirname, "assets")));
