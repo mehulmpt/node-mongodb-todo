@@ -38,11 +38,13 @@ class item {
   }
 
   async edit(input) {
+    const oldInput = await input.value
+    // console.log(oldInput)
     const newInput = prompt("Enter new msg:", input.value);
     input.value = newInput;
     await fetch("/api/modify", {
       method: "POST",
-      body: JSON.stringify({ old: input.value, new: newInput }),
+      body: JSON.stringify({ old: oldInput, new: newInput }),
       headers: {
         "Content-Type": "application/json",
       },
